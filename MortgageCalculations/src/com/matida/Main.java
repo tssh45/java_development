@@ -1,8 +1,6 @@
 package com.matida;
 
 public class Main {
-    final static byte PERCENT = 100;
-    final static byte MONTHS_IN_YEAR = 12;
 
 
     public static void main(String[] args) {
@@ -10,8 +8,11 @@ public class Main {
         float annualInterest = (float) Console.readNumber("Annual Interest: ", 0, 30);
         byte years = (byte) Console.readNumber("Years: ", 0, 30);
 
-        new MortgageReports().printMortgage();
-        MortgageReports.printPaymentSchedule();
+        MortgageCalculator calculator = new MortgageCalculator(principal, annualInterest, years);
+        MortgageReports report = new MortgageReports(calculator);
+
+        report.printMortgage();
+        report.printPaymentSchedule();
 
 
     }
