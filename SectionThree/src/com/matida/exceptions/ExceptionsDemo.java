@@ -7,10 +7,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-
-
-
-
 public class ExceptionsDemo {
 
     public static void show() {
@@ -23,8 +19,6 @@ public class ExceptionsDemo {
             System.out.println("ERROR: Deposit cannot be less than zero");
             Logger.getLogger("File not found");
 
-
-
         }
         try {
             account.withdraw(10);
@@ -32,9 +26,6 @@ public class ExceptionsDemo {
         } catch (AccountException e) {
             var cause = e.getCause();
             System.out.println(cause.getMessage());
-
-
-
 
         }
     }
