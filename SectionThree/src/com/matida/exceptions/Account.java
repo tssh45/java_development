@@ -1,18 +1,20 @@
 package com.matida.exceptions;
 
-import java.io.IOException;
-
 public class Account {
     private float balance;
 
-    public void deposit(float value) throws IOException {
-        if (value < 0)
-            throw new IOException();
+    public Account(float balance) {
+        this.balance = balance;
+        //balance = 0;
     }
 
-    public void withdraw(float value) throws AccountException {
-        if (value > balance) {
+    public void deposit(float value) {
+        if (value <= 0)
+            throw new IllegalArgumentException();
+    }
+
+    public void withdraw(float value) throws AccountException{
+        if (value > balance)
             throw new AccountException(new InsufficientFundsException());
-        }
     }
 }
