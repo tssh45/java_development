@@ -15,7 +15,7 @@ public class Account implements Cloneable, Serializable {
     private boolean jointAccount;
 
     public void addCustomer(Customer customer) {
-        this.customers.add(Customer customer);
+        this.customers.add(customer);
     }
 
     public ArrayList<Customer> getCustomers() {
@@ -79,7 +79,7 @@ public class Account implements Cloneable, Serializable {
         this.pin = pinIn;
     }
 
-    public double setAmount(double f) {
+    public void setAmount(double f) {
         this.amount = f;
     }
 
